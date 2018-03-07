@@ -21,7 +21,10 @@
     </div>
     {% else %}
         {% if guess_num %}
-        <div class="wrong">{{ guess_status }}</div>
+        <div class="wrong">
+            <h3>{{ guess_status }}</h3>
+            <h2>{{ session['guessed'] }}</h2>
+        </div>
         {% endif %}
         <form action="/" method="POST">
             <input type="text" name="guessNumber">

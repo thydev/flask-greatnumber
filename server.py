@@ -15,16 +15,23 @@ def index():
             guess_status = 'win'
         elif guess_num < session['mynum']:
             guess_status = 'Too low!'
+            session['guessed'] += 1
         else:
             guess_status = 'Too high!'
+            session['guessed'] += 1
+
         return render_template('index.html', guess_status = guess_status, guess_num = guess_num)
     else:
+        session.clear()
         if not 'mynum' in session:
             session['mynum'] = random.randint(1, 100)
+            session['guessed'] = 0
+            print session['guessed']
         return render_template('index.html')
 
 @app.route('/replay', methods=['POST'])
 def replay():
     session.pop('mynum')
+    session.pop('guessed')
     return redirect('/')
 app.run(debug = True)
