@@ -1,0 +1,16 @@
+div{
+    font-size: 24px;
+    text-align: center;
+}
+.wrong{
+    width: 150px;
+    height: 150px;
+    background: red;
+    border: 1px solid;
+}
+.win{
+    width: 150px;
+    height: 150px;
+    background: green;
+    border: 1px solid;
+}
