@@ -16,7 +16,7 @@
     <div class="win">
         {{ session['mynum'] }} was the number!
         <form action="/replay" method="POST">
-            <button type="submit">Play again!</button>
+            <button type="submit" autofocus>Play again!</button>
         </form>
     </div>
     {% else %}
@@ -27,7 +27,7 @@
         </div>
         {% endif %}
         <form action="/" method="POST">
-            <input type="text" name="guessNumber">
+            <input type="text" name="guessNumber" autofocus>
             <button type="submit">Submit</button>
         </form>
     {% endif %}
